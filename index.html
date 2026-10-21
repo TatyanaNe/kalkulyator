@@ -26,6 +26,7 @@ a.btn { display: inline-block; background: var(--accent); color: #fff; text-deco
   <p style="margin-top:14px">Проверяю, что ты в клубе…</p>
 </div>
 <script>
+(() => { // всё внутри функции, чтобы имена не мешали калькулятору после document.write
 const API = "https://script.google.com/macros/s/AKfycbwkLTtZr7W8WBrmFXEyzqzxWQ-6DtVC7Q1V2lnihdNqNtmdeQ-BZ6x5qLVKoL6misFD/exec";
 const BOT = "https://t.me/prodamusniksbot";
 const tg = window.Telegram && window.Telegram.WebApp;
@@ -50,6 +51,7 @@ else {
     })
     .catch(e => { show(...MSG.error); document.getElementById("box").insertAdjacentHTML("beforeend", `<p style="font-size:11px">${String(e).replace(/</g, "&lt;")}</p>`); });
 }
+})();
 </script>
 </body>
 </html>
